@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<title>
+		Build a Survey
+	</title>
+<style>
+    *{
+        /* width: 100%; */
+        margin:0;
+        padding:0;
+        list-style-type: none;
+        text-decoration: none;
+    }
+  
+   
+   
+		body {
+			background-color:rgb(239, 246, 246);
+            /* background-color: pink; */
+			/* font-family: Arial, Helvetica, sans-serif; */
+            font-weight: bold;
+			text-align: center;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+		}
+	/* Styling the Form (Color, Padding, Shadow) */
+		form {
+            /* border:solid black 1px; */
+            /* border-radius: 200px; */
+            position: absolute;
+            top: 100px;
+            left: 530px;
+			/* background-color:rgb(205, 241, 236); */
+			max-width: 500px;
+			margin: 50px auto;
+            /* margin-bottom:100px; */
+            /* padding-top: 30px; */
+			padding: 30px 20px;
+            background-color: 
+        white;
+            /* background-color: blue; */
+            
+            /* border:1px solid black; */
+			box-shadow: 5px 4px 9px 9px rgba(153, 148, 148, 0.5);
+            border-radius: 30px;
+            /* opacity: 0.7; */
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		/* Styling form-control Label */
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input,
+		select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			/* border: 1px solid #777; */
+			border-radius: 2px;
+			/* font-family: inherit; */
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+        
+
+		/* Styling form-control Radio
+		button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+       input[type=text]{
+            margin:0 auto;
+            border:none;
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            /* box-shadow:  15px 10px 10px rgba(153, 148, 148, 0.5); */
+            /* background-color: pink; */
+            box-shadow:  -2px 8px 8px rgba(153, 148, 148, 0.5);
+        }
+        input[type=LocationCity]
+        {
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            box-shadow:  -2px 8px 8px  rgba(153, 148, 148, 0.5);
+        }
+        select[name=role ],select[name=Rating],select[name=Fashion],select[name=toys],select[name=mobiles],select[name=Laptops],select[name="Electronics"],select[name=Accessories],select[name=Foods]{
+            border: none;
+            border-radius: 10px ;
+            box-shadow:  -2px 8px 8px rgba(153, 148, 148, 0.5);
+            padding:7px;
+            margin-top: 25px;
+
+        }
+       
+      
+       
+
+		/* Styling Button */
+		button {
+			background-color:pink;
+			border: 1px solid #777;
+			border-radius: 5px;
+            margin-left: 100px;
+			/* font-family: inherit; */
+			font-size: 25px;
+			display: block;
+			width: 300px;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+        h2{
+            position: absolute;
+            /* border:5px solid black; */
+            margin-top: 90px;
+            margin-left: 630px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* align-items: center; */
+            
+        }
+        img{
+            position: absolute;
+            /* margin-right:30px; */
+            left: 20px;
+            top: -5px;
+            border-radius: 50%;
+            height:45px;
+            width:50px;
+            margin-top: 10px;
+        }
+        .horizontal {
+            background-color: rgb(192, 235, 187);
+            padding: 12px 30px;
+            width: 100%;
+            box-shadow: 15px 10px 10px rgba(153, 148, 148, 0.5);
+            position: fixed;
+            z-index:2;
+        }
+        ul li {
+            overflow: hidden;
+            /* flex: initial; */
+            display: inline;
+            /* background-color: beige; */
+            /* box-shadow:  15px 15px 10px rgba(153, 148, 148, 0.5); */
+            
+            /* padding: 10PX 40px; */
+
+        }
+        nav ul li a {
+            /* overflow: hidden; */
+            text-align: centre;
+            padding: 10px 50px;
+            /* box-shadow:  -4px 15px 10px 10px rgba(153, 148, 148, 0.5); */
+            border-radius: 20px;
+
+            
+        }
+        .vertical{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 20px;
+            /* background-color: rgb(208, 214, 214); */
+            padding:10px 1px;
+            position: fixed;
+            height: 100%;
+            /* text-align: left; */
+            background-color: #b9dee5;
+            /* background-color:rgb(244, 234, 241); */
+            /* margin-left: -8px; */
+  /* margin-top: 165px; */
+  /* margin-bottom: 90px; */
+            /* box-shadow:  15px 10px 10px rgba(153, 148, 148, 0.5); */
+            /* margin-left: 45px; */
+            z-index:-1;
+            /* border: 4px solid black; */
+            box-shadow:  15px 10px 10px rgba(153, 148, 148, 0.5);
+ 
+        }
+        .vertical ul{
+            /* padding: 30px 20px; */
+            overflow: auto;
+            /* text-align: left; */
+        }
+        .vertical ul  li {
+  
+            border: none;
+            /* overflow: hidden; */
+            /* flex: initial; */
+            /* display: block; */
+            /* padding:808 */
+            margin-left: 20px;
+            /* text-align: left; */
+            /* background-color: beige; */
+
+        }
+        .vertical li a{
+            /* background-color: green; */
+            border: none;
+            /* margin-top: -5px; */
+            display: block;
+            /* height: 100%; */
+            width: 150px;
+            /* margin-left: 30px; */
+            /* text-align: left; */
+            /* background-color: #afe8d3; */
+            /* padding: 15px; */
+        }
+        .vertical  a {
+            /* overflow: hidden; */
+            /* display: inline; */
+            /* align-items: left; */
+            /* padding: 20px; */
+            margin-left: -10px;
+            text-align: left;
+            
+        }
+    
+        
+        
+      
+        .vertical li a:hover{
+            /* background-color: black; */
+            /* background-color: #d2f1ea; */
+  /* color:black; */
+  font-size: 17px;
+  border-radius: 30px;
+        }
+        .horizontal li a:hover{
+            /* background-color: black; */
+            background-color: #d2f1ea;
+  color:black;
+  font-size: 17px;
+  border-radius: 30px;
+        }
+        input{
+            width: 400px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            /* align-items: centre; */
+            text-align: left;
+        }
+        
+        .vertical select{
+        border-radius: 3px;
+        /* font-size: 40px; */
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        font-size: 16px;
+        color: #551A8B;
+        /* background-color:black */
+        background-color: #b9dee5;
+
+        }
+        .vertical li{
+
+            background-color: #b9dee5;
+
+        }
+        
+	</style>
+</head>
+
+<body>
+    <nav class="horizontal">
+        <ul>
+            <div class="uff">
+            <li><a href="#"><img src="1523959111035.jpg" ></a></li>
+            <li><input type="text" placeholder="     Start your search here.."></li>
+            <li><a href="https://yoshops.com/" target="_blank">Home</a></li>
+            <li><a href="https://yoshops.com/about" target="_blank">About Us</a></li>
+            <li><a href="https://yoshops.com/contact" target="_blank">Contact Us</a></li>
+            <li><a href="https://yoshops.com/p/staffing" target="_blank">Careers</a></li>
+            <li><a href="https://yoshops.aftership.com/" target="_blank">Order</a></li>
+            <li><a href="https://yoshops.com/p/return" target="_blank">Return</a></li>
+            
+            
+           </div>
+        </ul>
+    </nav>
+    <nav  class="vertical">
+        <ul>
+            <div class="uff">
+                <br>
+
+            <!-- <li><a href="#"><img src="1523959111035.jpg" ></a></li> -->
+        
+           <label for="toys"><li><a href="#"></a></li> <select name="toys" id="toys">
+                <option value="toys & games">Toys & Games</option>
+            <option value="playstations">PlayStations</option>
+            <option value="rc toys">RC Toys</option>
+        <option value="soft toys">Soft Toys</option>
+        <option value="drones">Drones</option>
+<option value="gameacessories">Gamming Accessories </option></label></select></a></li>
+
+            <label for="mobiles"><li><a href="#"> </a></li> 
+            <select name="mobiles" id="mobiles">
+                <option value="Mobiles">Mobiles</option>
+                <option value="Smart Phones">Smart phones</option>
+                <option  value="Head Phones">Head phones</option>
+                <option value="Mobile Acessories">Mobile Accessories</option>
+                <option value="Feature Keypad Mobiles">Feature Keypad Mobiles</option>
+            </select></label> 
+            <label for="Laptops" id="Laptops"> 
+                <li><a href="#"></a></li>
+                <select name="Laptops" id="Laptops">
+                    <option value="Laptops">Laptops</option>
+                    <option value="Gamming Laptops">Gamming Laptops</option>
+                    <option value="Personal Laptops">Personal Laptops</option>
+                    <option>Tablets</option>
+                    <option>Laptop Accessories</option>
+                    <option>Computers Accessories</option>
+                </select></label>
+                <label for="Accessories" id="Accessories">  
+                    <li><a href="#"></a></li>
+                    <select name="Accessories" id="Accessories">
+                        <option value="Acessories">Accessories</option>
+                        <option value="Books">Books  &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="Stationery">Stationery Accessories   </option>
+                        <option value="Bags">Bags   </option>
+                        <option value="SpareParts">SpareParts    </option>
+                        <option value="More">More</option>
+                    </select></label>
+                    <label for="Electronics">   <li><a href="#"></a></li>
+                        <select name="Electronics" id="Electronics">
+                            <option>Electronics</option>
+                            <option>Led Tv electronic items</option>
+                            <option>Others</option>
+                           
+                        </select></label>
+               
+                        <label for="Fashion">               <li><a href="#"></a></li>
+                            <select name="Fashion" id="Fashion">
+                                <option>Fashion</option>
+                                <option>Men fashion ware items</option>
+                                <option>Women</option>
+                                <option>Kids</option>
+                               
+                            </select></label>
+                            <label for="Foods" id="Foods">               <li><a href="#"></a></li>
+                                <select name="Foods" id="Foods">
+                                    <option value="Foods">Foods</option>
+                                    <option>Organic fooditem varities</option>
+                                    <option>Vegetable</option>
+                                    <option>Non Veg</option>
+                                    <option>Seafood</option>
+                                    <option>Biryani</option>
+                                </select></label>
+    
+           
+
+            
+            <!-- <li><a href="#">Services</a></li> -->
+            
+            
+           </div>
+        </ul>
+    </nav>
+	<h2>SURVEY FORM OF YOSHOPS</h2>
+    <br>
+    <br>
+
+	<form id="form">
+        
+
+		<div class="form-control pad">
+			<label for="name" id="label-name">
+				1.Name
+			</label>
+
+			<input type="text"
+				id="name"
+				placeholder="Enter your name" />
+		</div>
+
+		<div class="form-control">
+			<label for="LocationCity" id="LocationCity ">
+				2.Location , City 
+			</label>
+
+			<!-- Input Type Email-->
+			<input type="LocationCity"
+				id="LocationCity "
+				placeholder="Enter your Location , City " required/>
+		</div>
+
+
+		<div class="form-control">
+			<label for="role" id="label-role">
+				3.Which class do you study ?
+			</label>
+		
+			<select name="role" id="role">
+				<option value="Primary | High school">Primary | High School</option>
+				<option value="Intermediate">
+					Intermediate
+				</option>
+				<option value="graduation">graduation</option>
+                                                                             <option value="Post Graduation">Post Graduation</option>
+			</select>
+		</div>
+                                      
+                                        <div class="form-control">
+			<label for="what is your prefred amount for online classes " id="label-Which Price range for Online Tution for LKG to PG Monthly Fees You like must">
+				4.Which Price range for Online Tution for LKG to PG Monthly Fees You like must
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="Which Price range for Online Tution for LKG to PG Monthly Fees You like must"
+				placeholder="Which Price range for Online Tution for LKG to PG Monthly Fees You like must" />
+		</div>
+                                      <div class="form-control">
+			<label for=" Laptop and Mobile which Price range you like most" id="label- Laptop and Mobile which Price range you like most">
+				5. Laptop and Mobile which Price range you like most
+			</label>
+
+			
+			<input type="text"
+				id=" Laptop and Mobile which Price range you like most"
+				placeholder=" Laptop and Mobile which Price range you like most" />
+		</div>
+                                      <div class="form-control">
+			<label for="role" id="label-role">
+				6.What is your Favourite food ?
+			</label>
+			
+		
+			<select name="role" id="role">
+				<option value="Veg Biryani">Veg Biryani</option>
+				<option value="Pongal">
+					Pongal
+				</option>
+				<option value="Veg Fried Rice">Veg Fried Rice</option>
+			</select>
+		</div>
+                                       <div class="form-control">
+			<label for="role" id="label-role">
+				7.What is Price of your Favourite food which  you like most 
+			</label>
+			<select name="role" id="role">
+                                                                             <option value="RS 99">RS 99</option>
+				<option value="RS 149">RS 149</option>
+				<option value="RS 249">
+					RS 249
+				</option>
+				<option value="RS 149 | RS 249 ">RS 149 | RS 249 </option>
+			</select>
+		</div>
+                                      <div class="form-control">
+            <label>
+                8. Which Financial products you like most
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="checkbox"
+                       name="recommed">Mutual Fund SIP (ROI 12%)-1yr
+                    </input>
+            </label>
+            <label for="recommed-2">
+                <input type="checkbox"
+                       name="recommed">Company Stock IPO(ROI 15%)-1yr
+                    </input>
+            </label>
+            <label for="recommed-3">
+                <input type="checkbox"
+                       name="recommed">Yoshops Franchise Investment(ROI 16%)-1yr
+                    </input>
+            </label>
+            <label for="recommed-3">
+                <input type="checkbox"
+                       name="recommed">Bank FD(Rate of Interest- 7%)-1yr
+                    </input>
+            </label>
+        </div>
+
+                      <div class="form-control">
+            <label>
+                9.Are you interested in Yoshops Finance Product.
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio"
+                       id="recommed-1"
+                       name="recommed">Yes</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio"
+                       id="recommed-2"
+                       name="recommed">No</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio"
+                       id="recommed-3"
+                       name="recommed">Maybe</input>
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="internship name" id="label-internship">
+                10. Which Unpaid Training Internship are you interested for six Months ?
+            </label>
+            <input type="text"
+                   id="internship" />
+        </div>
+        <div class="form-control">
+            <label>
+                11. How much you pay training fees per month for online training with internship?
+            </label>
+ 
+            <!-- Input Type Radio Button -->
+            <label for="500">
+                <input type="radio"
+                       id="500"
+                       name="500">500</input>
+            </label>
+            <label for="1000">
+                <input type="radio"
+                       id="1000"
+                       name="1000">1000</input>
+            </label>
+            <label for="1500">
+                <input type="radio"
+                       id="1500"
+                       name="1500">1500</input>
+            </label>
+            <label for="4400">
+                <input type="radio"
+                       id="4400"
+                       name="4400">4400</input>
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="suggesion" id="label-suggesion">
+                12. Any Suggestions for Yoshops Startup
+            </label>
+            <input type="text"
+                   id="suggestion" />
+        </div>
+        <div class="form-control">
+            <label>
+                
+                13. How would you rate Yoshops Training Internship and Products & Service
+            </label>
+            <select name="Rating" id="Rating">
+                <option value="1">1*</option>
+                <option value="2">2**</option>
+                <option value="3">3***</option>
+                <option value="4">4****</option>
+                <option value="5">5*****</option>
+                </select>
+        </div>
+  
+        
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+</body>
+  
+</html>
